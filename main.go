@@ -24,7 +24,7 @@ func main() {
 	r := gin.Default()
 
 	r.LoadHTMLGlob("templates/*")
-	r.Static("/hhb","templates/statics")
+	r.Static("/hhb","templates/static")
 	r.GET("/", func(c *gin.Context) {
 		c.HTML(200, "index.tmpl", gin.H{
 			"title": "短视频去水印",
