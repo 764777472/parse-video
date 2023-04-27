@@ -23,16 +23,7 @@ type HttpResponse struct {
 func main() {
 	r := gin.Default()
 
-	r.Static("/hhb","templates/statics")
-	//添加自定义函数，解析下面的“百度一下”html代码
-	r.SetFuncMap(template.FuncMap{
-		"safe": func(str string) template.HTML{
-			return template.HTML(str)
-		},
-	})
-
-	r.LoadHTMLGlob("templates/**/*")
-	// r.LoadHTMLGlob("templates/*")
+	r.LoadHTMLGlob("templates/*")
 	
 	r.GET("/", func(c *gin.Context) {
 		c.HTML(200, "index.tmpl", gin.H{
