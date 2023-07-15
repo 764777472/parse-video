@@ -31,7 +31,8 @@ func (d douYin) parseVideoID(videoId string) (*VideoParseInfo, error) {
 	}
 
 	data := gjson.GetBytes(res.Body(), "aweme_detail")
-
+	fmt.Println(data)
+	
 	videoInfo := &VideoParseInfo{
 		Title:    data.Get("desc").String(),
 		VideoUrl: data.Get("video.play_addr.url_list.0").String(),
