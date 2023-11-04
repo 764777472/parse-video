@@ -33,7 +33,7 @@ func ParseVideoShareUrl(shareUrl string) (*VideoParseInfo, error) {
 	if urlParser == nil {
 		return nil, fmt.Errorf("source %s has no video share url parser", source)
 	}
-
+	fmt.Println("123", urlParser.parseShareUrl(shareUrl))
 	return urlParser.parseShareUrl(shareUrl)
 }
 
